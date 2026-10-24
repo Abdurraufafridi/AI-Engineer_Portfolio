@@ -92,7 +92,7 @@ h1{text-transform:uppercase;letter-spacing:.02em;font-size:clamp(34px,7vw,68px);
 .mq div{display:flex;gap:14px;width:max-content;animation:mq 45s linear infinite}
 .mq span{padding:8px 18px;border:1px solid var(--line);background:#fff;border-radius:999px;font-weight:500;font-size:14.5px;color:var(--mut);white-space:nowrap}
 @keyframes mq{to{transform:translateX(-50%)}}
-@media(prefers-reduced-motion:reduce){.mq div{animation:none;flex-wrap:wrap;width:auto;justify-content:center;padding:0 24px}.mq span:nth-child(n+15){display:none}}
+@media(prefers-reduced-motion:reduce){.mq div{animation:none;flex-wrap:wrap;width:auto;justify-content:center;padding:0 24px}.mq span:nth-child(n+17){display:none}}
 body{background:radial-gradient(900px 420px at 88% -60px,#E1EAFE,transparent 70%),var(--bg)}
 h1{background:linear-gradient(100deg,var(--ink) 35%,var(--br));-webkit-background-clip:text;background-clip:text;color:transparent}
 .hd h2{position:relative;padding-bottom:16px}
@@ -109,6 +109,33 @@ h1{background:linear-gradient(100deg,var(--ink) 35%,var(--br));-webkit-backgroun
 .rv.in{opacity:1;transform:none}
 .card.in:hover,.cert.in:hover{transform:translateY(-3px)}
 @media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}}
+body{counter-reset:s}.hd{counter-increment:s}
+.hd::before{content:"0" counter(s);display:inline-block;font:700 12px/1 Manrope,sans-serif;letter-spacing:.16em;color:var(--br);background:var(--brs);padding:7px 11px;border-radius:999px;margin-bottom:14px}
+.hd h2{font-size:34px}section{padding:84px 0}
+#pb{position:fixed;top:env(safe-area-inset-top,0px);left:0;height:3px;width:0;background:linear-gradient(90deg,var(--br),var(--tl));z-index:40}
+.hero{position:relative;overflow:hidden}
+.hero::before,.hero::after{content:"";position:absolute;border-radius:50%;pointer-events:none}
+.hero::before{width:460px;height:460px;left:-140px;top:-160px;background:radial-gradient(circle,rgba(31,79,216,.2),transparent 70%)}
+.hero::after{width:380px;height:380px;right:-100px;bottom:-120px;background:radial-gradient(circle,rgba(11,127,114,.18),transparent 70%)}
+.hero .w{position:relative;z-index:1}
+.photo{padding:6px;border-radius:50%;background:conic-gradient(from 200deg,var(--br),var(--tl),#7AA2F7,var(--br))}
+.photo img{border:5px solid #fff;box-shadow:0 24px 56px -14px rgba(31,79,216,.45)}
+.pg{grid-template-columns:repeat(3,1fr)}
+.pc{position:relative;overflow:hidden}
+.pc::before{content:"";position:absolute;inset:0 0 auto 0;height:4px;background:linear-gradient(90deg,var(--br),var(--tl))}
+.pc.big{border-top:1px solid var(--line)}
+.pc .fl .chip{background:var(--brs);border-color:transparent;color:#1B3FA8;font-size:12.5px}
+.chip{transition:transform .2s,border-color .2s,color .2s}
+.sg .chip:hover{border-color:var(--br);color:var(--br);transform:translateY(-1px)}
+.cg{grid-template-columns:repeat(6,1fr)}
+.cg .cert:nth-child(-n+3){grid-column:span 2}.cg .cert:nth-child(n+4){grid-column:span 3}
+.cert .seal{background:linear-gradient(135deg,var(--br),#4B7BF5);color:#fff;border:0}
+.ct{position:relative;overflow:hidden}
+.ct::after{content:"";position:absolute;right:-90px;top:-90px;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(75,123,245,.5),transparent 70%)}
+.ct>*{position:relative;z-index:1}
+.ft{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}.fk{display:flex;gap:18px}.fk a{color:var(--br);text-decoration:none;font-weight:600}
+@media(max-width:1000px){.pg{grid-template-columns:1fr 1fr}}
+@media(max-width:860px){.pg,.cg{grid-template-columns:1fr}.cg .cert{grid-column:auto!important}section{padding:56px 0}.hd h2{font-size:28px}}
 </style></head><body>
 <header><div class="w"><a class="logo" href="#top" aria-label="Abdur Rauf, back to top">AR</a>
 <nav><a href="#about">About</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#experience">Experience</a><a href="#certificates">Certificates</a><a href="#contact">Contact</a></nav></div></header>
@@ -138,8 +165,8 @@ h1{background:linear-gradient(100deg,var(--ink) 35%,var(--br));-webkit-backgroun
 <section id="experience"><div class="w"><div class="hd"><h2>Training and hands-on experience</h2><p>Structured training and project-based work that shaped my engineering practice.</p></div>
 <div class="tl-l">
 <div class="card"><span class="flag f-b">Mar to Jun 2025</span><h3 style="margin:12px 0 4px">AI Certificate Program</h3><p style="margin:0 0 8px;color:var(--mut)">NAVTTC, Prime Minister’s Youth Skills Development Program (Strings Technologies)</p><p style="margin:0">Completed a program covering machine learning, deep learning, and professional communication, graded A+.</p></div>
-<div class="card"><span class="flag f-t">2025 to present</span><h3 style="margin:12px 0 4px">Project-based AI engineering</h3><p style="margin:0">Designed and built a hybrid-retrieval RAG system as a final year project, an NLP benchmark, and predictive models. See Projects above.</p></div>
-<div class="card"><span class="flag f-a">In progress</span><h3 style="margin:12px 0 4px">Building an ISP support agent</h3><p style="margin:0">Developing a locally hosted, database-grounded LLM agent for customer support.</p></div>
+<div class="card"><span class="flag f-t">2025 to present</span><h3 style="margin:12px 0 4px">Project-based AI engineering</h3><p style="margin:0">Designed and built a hybrid-retrieval RAG system as a final year project, an NLP benchmark, and a locally hosted, database-grounded ISP support agent. See Projects above.</p></div>
+<div class="card"><span class="flag f-a">In progress</span><h3 style="margin:12px 0 4px">Currently building</h3><p style="margin:0">An arXiv research-paper retrieval system using Milvus and Sentence Transformers.</p></div>
 </div></div></section>
 
 <section id="certificates"><div class="w"><div class="hd"><h2>Certificates</h2><p>Credentials and training completed.</p></div><div class="cg" id="cg"></div>
@@ -148,7 +175,7 @@ h1{background:linear-gradient(100deg,var(--ink) 35%,var(--br));-webkit-backgroun
 <section id="contact"><div class="w"><div class="ct"><div><h2>Let’s work together</h2><p>Open to AI Engineer roles and internships, in person or on-site, with relocation possible.</p></div>
 <div class="btns"><a class="btn" href="mailto:abdurraufafridi12@gmail.com">Email me</a><button class="btn o" id="cp" type="button">Copy email</button><a class="btn o" href="https://www.linkedin.com/in/abdurrauf-afridi-b1076a255" target="_blank" rel="noopener">LinkedIn</a><a class="btn o" href="https://github.com/Abdurraufafridi" target="_blank" rel="noopener">GitHub</a></div></div></div></section>
 </main>
-<footer><div class="w">© 2026 Abdur Rauf. AI Engineer, Islamabad, Pakistan.</div></footer>
+<footer><div class="w ft"><span>© 2026 Abdur Rauf. AI Engineer, Islamabad, Pakistan.</span><span class="fk"><a href="https://github.com/Abdurraufafridi" target="_blank" rel="noopener">GitHub</a><a href="https://www.linkedin.com/in/abdurrauf-afridi-b1076a255" target="_blank" rel="noopener">LinkedIn</a><a href="#top">Back to top</a></span></div></footer>
 <script>
 const ch=a=>a.map(x=>`<span class="chip">${x}</span>`).join("");
 const fl=a=>a.map(([c,t])=>`<span class="flag ${c}">${t}</span>`).join("");
@@ -162,32 +189,30 @@ st:["Python","Hugging Face","LangChain","Qdrant","FastAPI","RAG"],l:[]},
 prob:"Which text representation works best for sentiment classification, and where do the models fail?",
 app:"Compared TF-IDF with classical ML, Word2Vec and FastText embeddings, RNN, LSTM and GRU sequence models, and pretrained Sentence Transformers in one reproducible workflow with early stopping. Evaluated with accuracy, precision, recall, F1, confusion matrices, model disagreements, and influential TF-IDF features.",
 st:["Python","PyTorch","scikit-learn","Word2Vec","FastText","Sentence Transformers"],l:[["Benchmark repository","https://github.com/Abdurraufafridi/sentiment-analysis-benchmark"],["Related repository","https://github.com/Abdurraufafridi/imdb-sentiment-analysis"]]},
-{f:[["f-a","Ongoing"]],t:"ISP Customer Support Agent",s:"A locally hosted LLM agent that answers from a database instead of guessing.",
+{f:[["f-n","AI agent"]],t:"ISP Customer Support Agent",s:"A locally hosted LLM agent that answers from a database instead of guessing.",
 prob:"Customers ask about packages, speeds, and pricing, and a free-running model can invent plans or prices.",
-app:"A local Qwen 2.5 model served through Ollama, connected to a SQLite database of customer, subscription, and billing data. Next: price negotiation, account queries, and handoff to a human agent.",
+app:"A local Qwen 2.5 model served through Ollama, connected to a SQLite database of customer, subscription, and billing data, so answers about packages, speeds, and pricing come from real records. The data is structured to support price negotiation, customer account queries, and human-agent handoff.",
 st:["Python","Ollama","Qwen 2.5","SQLite","LLMs"],l:[]},
-{f:[["f-n","Machine learning"]],t:"Data Science Salary Prediction",s:"Regression models that estimate salaries from job attributes.",
-prob:"Estimate salary levels from structured job and profile data.",
-app:"Feature engineering, regression model comparison, and evaluation with R², MAE, and RMSE.",
-st:["Python","Pandas","scikit-learn"],l:[]},
-{f:[["f-n","Data visualization"]],t:"Student Depression Trends Dashboard",s:"Interactive Power BI dashboards for student behavioral data.",
-prob:"Survey data on student behavior is hard to read for patterns related to mental health.",
-app:"Modeled the data in Power BI and built interactive dashboards that surface trends and risk-related indicators.",
-st:["Power BI","Data modeling"],l:[]}];
+{f:[["f-a","Ongoing"],["f-n","Semantic search"]],t:"AI Research Copilot for LLMs and Agentic AI",s:"A retrieval system over arXiv research papers.",
+prob:"Finding the right passage across long research papers is slow without semantic search.",
+app:"Processes arXiv PDFs, extracts text, and builds overlapping chunks with page metadata. Creates 384-dimensional semantic embeddings with Sentence Transformers, stores them in Milvus for similarity search, and tracks processing state in SQLite. Pytest and Ruff cover testing and code quality. Currently improving metadata integrity and indexing reliability ahead of further retrieval and AI-assistant development.",
+st:["Python","PyMuPDF","Sentence Transformers","Milvus","SQLite","Pytest","Ruff"],l:[]}];
 document.getElementById("pg").innerHTML=P.map(p=>`<article class="card pc${p.big?" big":""}"><div class="fl">${fl(p.f)}</div><h3>${p.t}</h3><p class="s">${p.s}</p>
 ${p.big?`<div class="cols"><div><p class="lb">Problem</p><p>${p.prob}</p><p class="lb" style="margin-top:14px">Outcome</p><p>${p.out}</p></div><div><p class="lb">Architecture</p><ol>${p.steps.map(x=>`<li>${x}</li>`).join("")}</ol></div></div>`:`<div><p class="lb">Problem</p><p>${p.prob}</p></div><div><p class="lb">Approach</p><p>${p.app}</p></div>`}
 <div class="fl">${ch(p.st)}</div>${p.l.length?`<div class="lk">${p.l.map(([n,u])=>`<a href="${u}" target="_blank" rel="noopener">${n}</a>`).join("")}</div>`:""}</article>`).join("");
-const S=[["Languages",["Python","R","SQL"]],["Machine learning and deep learning",["scikit-learn","PyTorch","TensorFlow","Keras","NLTK","Hugging Face Transformers"]],["LLMs and generative AI",["RAG","LangChain","LangGraph","Agentic AI","Prompt engineering","Ollama","Qwen 2.5","n8n"]],["Embeddings and NLP",["Word2Vec","FastText","Sentence Transformers"]],["Data and databases",["NumPy","Pandas","MySQL","SQLite","Qdrant"]],["Visualization and BI",["Matplotlib","Seaborn","Power BI","Excel"]],["Engineering and deployment",["FastAPI","REST APIs","Git and GitHub","Docker (basic)","Model deployment","Model evaluation"]]];
+const S=[["Languages",["Python","R","SQL"]],["Machine learning and deep learning",["scikit-learn","PyTorch","TensorFlow","Keras","NLTK","Hugging Face Transformers"]],["LLMs and generative AI",["RAG","LangChain","LangGraph","Agentic AI","Prompt engineering","Semantic search","Ollama","Qwen 2.5","n8n"]],["Embeddings and NLP",["Word2Vec","FastText","Sentence Transformers"]],["Data and databases",["NumPy","Pandas","MySQL","SQLite","Qdrant","Milvus"]],["Document processing",["PyMuPDF","PDF text extraction","Chunking"]],["Visualization and BI",["Matplotlib","Seaborn","Power BI","Excel"]],["Engineering and deployment",["FastAPI","REST APIs","Git and GitHub","Docker (basic)","Pytest","Ruff","Model deployment","Model evaluation"]]];
 const W=[["Interpersonal",["Communication","Team collaboration","Stakeholder engagement"]],["Intrapersonal",["Self-directed learning","Adaptability","Analytical problem-solving"]],["Documentation",["Technical writing"]],["Spoken languages",["English (fluent)","Urdu (fluent)"]]];
 const col=(h,d)=>`<div class="card"><h3>${h}</h3>${d.map(([a,b])=>`<div class="row"><b>${a}</b><div class="fl">${ch(b)}</div></div>`).join("")}</div>`;
 document.getElementById("sg").innerHTML=col("Technical skills",S)+col("Professional skills",W);
-const C=[["ML","Machine Learning","Simplilearn SkillUP","Completed 14 May 2025",["f-b","Course completion"]],["AI","Artificial Intelligence: Machine Learning, Deep Learning, Communication","NAVTTC, Prime Minister’s Youth Skills Development Program, via Strings Technologies","5 Mar to 4 Jun 2025, issued 24 Jul 2025",["f-t","Grade A+"]],["IT","Diploma in Information Technology","Khyber Pakhtunkhwa Board of Technical and Commerce Education, Peshawar","Awarded 29 Jul 2022 (1101 / 1400)",["f-b","Grade A"]]];
+const C=[["ML","Machine Learning","Simplilearn SkillUP","Completed 14 May 2025",["f-b","Course completion"]],["AI","Artificial Intelligence: Machine Learning, Deep Learning, Communication","NAVTTC, Prime Minister’s Youth Skills Development Program, via Strings Technologies","5 Mar to 4 Jun 2025, issued 24 Jul 2025",["f-t","Grade A+"]],["IT","Diploma in Information Technology","Khyber Pakhtunkhwa Board of Technical and Commerce Education, Peshawar","Awarded 29 Jul 2022 (1101 / 1400)",["f-b","Grade A"]],["DL","Deep Learning","CampusX (YouTube)","Self-paced course",["f-n","Course"]],["NLP","Natural Language Processing","Krish Naik (YouTube)","Self-paced course",["f-n","Course"]]];
 document.getElementById("cg").innerHTML=C.map(c=>`<article class="cert"><div class="seal">${c[0]}</div><span class="flag ${c[4][0]}" style="align-self:flex-start">${c[4][1]}</span><h3>${c[1]}</h3><p class="is">${c[2]}</p><div class="dt">${c[3]}</div></article>`).join("");
 document.getElementById("cp").onclick=async e=>{const b=e.target;try{await navigator.clipboard.writeText("abdurraufafridi12@gmail.com");b.textContent="Email copied"}catch(x){b.textContent="abdurraufafridi12@gmail.com"}};
 const L=[...document.querySelectorAll("nav a")];const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)L.forEach(a=>a.classList.toggle("on",a.getAttribute("href")==="#"+e.target.id))}),{rootMargin:"-40% 0px -55% 0px"});
 document.querySelectorAll("section").forEach(s=>io.observe(s));
-const K=["Python","R","SQL","PyTorch","TensorFlow","scikit-learn","Hugging Face","LangChain","LangGraph","Qdrant","FastAPI","Ollama","n8n","Power BI"];
+const K=["Python","R","SQL","PyTorch","TensorFlow","scikit-learn","Hugging Face","LangChain","LangGraph","Qdrant","FastAPI","Ollama","n8n","Milvus","Power BI","PyMuPDF"];
 document.getElementById("mq").innerHTML=[...K,...K].map(x=>`<span>${x}</span>`).join("");
 const rio=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");rio.unobserve(e.target)}}),{threshold:.1});
 document.querySelectorAll(".card,.cert").forEach(el=>{el.classList.add("rv");rio.observe(el)});
+const pb=document.createElement("div");pb.id="pb";document.body.appendChild(pb);
+addEventListener("scroll",()=>{const h=document.documentElement;pb.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+"%"},{passive:true});
 </script></body></html>
